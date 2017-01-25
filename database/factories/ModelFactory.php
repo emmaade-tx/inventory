@@ -13,7 +13,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+	static $password;
 
     return [
         'name' => $faker->name,
@@ -24,10 +24,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Inventory::class, function (Faker\Generator $faker) {
-    static $password;
-
     return [
-        'product' => $faker->name,
-        'price' => $faker->integer,
+        'user_id' => $faker->name,
+        'category_id' => 1,
+        'name' => $faker->name,
+        'price' => 20,000
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
     ];
 });
